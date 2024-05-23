@@ -6,7 +6,7 @@ namespace StudentManagement.Data.Activities.GenericActivity
     {
         void Add(T detail);
         void Update(T detail);
-        void Delete(int nId);
+        void Delete(Guid nId);
         T[] ViewAll();
     }
 }

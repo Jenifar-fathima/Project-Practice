@@ -1,5 +1,4 @@
 ﻿using StudentManagement.Common;
-using System.Security.Cryptography;
 
 namespace StudentManagement.Data.Activities.GenericActivity
 {
@@ -8,8 +7,8 @@ namespace StudentManagement.Data.Activities.GenericActivity
         private const int DEFAULT_CAPACITY = 5;
 
         #region Fields
-        protected int _count = 0;
-        protected T[] _lstDetails;
+        private int _count = 0;
+        private T[] _lstDetails;
         #endregion
 
         public GenericActivity(T[] lstDetails = default!)
@@ -30,7 +29,7 @@ namespace StudentManagement.Data.Activities.GenericActivity
 
         }
 
-        public void Delete(int nId)
+        public void Delete(Guid nId)
         {
             T? memberToDelete = FindById(nId);
             if (memberToDelete != null)
@@ -55,7 +54,7 @@ namespace StudentManagement.Data.Activities.GenericActivity
             }
         }
 
-        public T? FindById(int nId)
+        public T? FindById(Guid nId)
         {
             for (int i = 0; i < _count; i++)
             {
@@ -70,12 +69,7 @@ namespace StudentManagement.Data.Activities.GenericActivity
 
         public T[] ViewAll()
         {
-            T[] result = new T[_count];
-            for (int i = 0; i < _count; i++)
-            {
-                result[i] = _lstDetails[i];
-            }
-            return result;
+            return _lstDetails;
         }
         #region Private Methods
         private void CheckArrayCapacity()

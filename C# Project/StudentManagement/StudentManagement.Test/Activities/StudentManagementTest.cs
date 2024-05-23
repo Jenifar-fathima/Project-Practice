@@ -13,7 +13,7 @@ namespace StudentManagement.Test.Activities
 
             StaffDto staff = new StaffDto
             {
-                Id = 1,
+                Id = Guid.NewGuid(),
                 StaffEmail = "staff1@gmail.com",
                 StaffName = "Staff1",
                 StaffAge = 1,
@@ -21,12 +21,21 @@ namespace StudentManagement.Test.Activities
                 StaffPassword = "Password"
             };
 
-            activity.Add(staff);
-
-
+            activity.Add(staff);        
+        }
+        [TestMethod] 
+        public void Test_Student() 
+        {
             IStudentActivity activity2 = new StudentActivity();
 
-            StudentDto studentDto = new StudentDto { Id = 2, StudentName = "Jenifar",StudentEmail = "jenifar@gmail.com", StudentAge = 2, StudentPhoneNumber="9876543210" };
+            StudentDto studentDto = new StudentDto
+            {
+                Id = Guid.NewGuid(),
+                StudentName = "Jenifar",
+                StudentEmail = "jenifar@gmail.com",
+                StudentAge = 2,
+                StudentPhoneNumber = "9876543210"
+            };
 
             activity2.Add(studentDto);
         }

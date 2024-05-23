@@ -4,7 +4,7 @@
     {
         void Add(StudentDto student);
         void Update(StudentDto student);
-        void Delete(int nId);
+        void Delete(Guid nId);
         StudentDto[] ViewAll();
 
     }

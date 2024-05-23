@@ -4,6 +4,6 @@ public interface IStaffActivity
 {
     void Add(StaffDto staff);
     void Update(StaffDto staff);
-    void Delete(int nId);
+    void Delete(Guid nId);
     StaffDto[] ViewAll();
 }
